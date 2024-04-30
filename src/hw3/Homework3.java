@@ -17,7 +17,7 @@ public class Homework3 {
 		int c = input.nextInt();
 		tri.triangle(a, b, c);
 
-		randomTo9();
+		tri.randomTo9();
 
 		System.out.println("不想要讓 0~9 哪個數字出現? :");
 		int x = input.nextInt();
@@ -27,7 +27,7 @@ public class Homework3 {
 
 	public void triangle(int a, int b, int c) {
 
-		if (a + b > c || a + c > b || b + c > a) {
+		if (a + b > c && a + c > b && b + c > a) {
 			if (a == b && a == c && b == c) {
 				System.out.println("正三角形");
 			} else if (a == b || a == c || b == c) {
@@ -49,7 +49,7 @@ public class Homework3 {
 
 	}
 
-	public static void randomTo9() {
+	public void randomTo9() {
 		int number = (int) (Math.random() * 101);
 		Scanner input = new Scanner(System.in);
 
@@ -74,7 +74,8 @@ public class Homework3 {
 		}
 	}
 
-	// 似乎會用到Random();
+	// 似乎會用到Random(); 抽選6數來源
+	// https://blog.idontwannarock.me/2017/11/java_lottery_algorithm_basic/
 	public void theHater(int x) {
 		int count = 0;
 		int[] y = new int[49];
@@ -94,12 +95,12 @@ public class Homework3 {
 
 		for (int j = 0; j < 6; j++) {
 			int index = r.nextInt(count);
-			boolean check = true; //確認數字有沒有被選過 true = 沒有
+			boolean check = true; // 確認數字有沒有被選過 true = 沒有
 			int a = y[index];
 
 			for (int k = 0; k < j; k++) {
 				if (a == y[k]) {
-					check = false; //選過了 重選
+					check = false; // 選過了 重選
 					j--;
 					break;
 				}
