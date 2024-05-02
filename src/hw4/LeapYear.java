@@ -24,8 +24,6 @@ public class LeapYear {
 
 		Homework4 y = new Homework4();
 		int year = 0;
-		int month = 0;
-		int day = c;
 		year = y.leapYear(a);
 		int sum = 0;
 		sum = y.sumDay(year, b, c);
@@ -34,12 +32,16 @@ public class LeapYear {
 			System.out.println("非閏年 2月不可以超過28天");
 		}
 		
-		else if ( (b == 4 || b == 6 || b == 9 || b == 12) && (year == 365 || year == 366) && c > 30){
+		else if ( (b == 4 || b == 6 || b == 9 || b == 11) && (year == 365 || year == 366) && c > 30){
 			
-			System.out.println("2 4 6 9 12月不可以超過30天");
+			System.out.println("2 4 6 9 11月不可以超過30天");
 		}
 		else if(b == 2 && c > 29 && year == 366) {
 			System.out.println("閏年 2月不可以超過29天");
+		}
+		else if((b == 1 || b == 3 || b == 5 || b == 7 || b == 8
+				|| b == 10 || b == 12) && (year == 365 || year == 366) && c > 31) {
+			System.out.println("1 3 5 7 8 10 12月不可以超過30天");
 		}
 		else {
 			System.out.printf("輸入的日期為該天該年的第 %d 天 \n", sum);

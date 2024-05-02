@@ -6,7 +6,7 @@ public class Homework4 {
 
 	public static void main(String[] args) {
 		Homework4 hw = new Homework4();
-
+		StudentScore show = new StudentScore();
 		hw.avgAndmax();
 
 		hw.reverseString();
@@ -17,8 +17,7 @@ public class Homework4 {
 		System.out.print("請輸入想要借多少錢? :");
 		int x = input.nextInt();
 		hw.borrowMoney(x);
-		
-		
+
 		// 程式碼太長了 想看仔細自己去LeapYear看
 		System.out.print("請輸入西元幾年(yyyy) :");
 		int allyear = input.nextInt();
@@ -28,10 +27,11 @@ public class Homework4 {
 		int allday = input.nextInt();
 
 		hw.yearMonthDay(allyear, allmonth, allday);
-		
-		
+
+		show.scoreCompare();
 
 	}
+
 //	===============================================================
 	public void avgAndmax() {
 
@@ -81,7 +81,7 @@ public class Homework4 {
 
 		System.out.println("==================================");
 	}
-	
+
 //	同上 直接轉成字串做比對 https://code101.app/docs/algo/string/string-reverse
 
 	public void planet() {
@@ -110,7 +110,7 @@ public class Homework4 {
 		System.out.printf("行星字串陣列裡面總共有 : %d 個母音 \t \n", count);
 		System.out.println("==================================");
 	}
-	
+
 //  借錢===============================================================
 
 	public void borrowMoney(int x) {
@@ -136,34 +136,34 @@ public class Homework4 {
 
 		System.out.println("==============================");
 	}
-	
+
 //  幾年幾月 太長了 所以想看去LeapYear看================================================
 
 	public void yearMonthDay(int a, int b, int c) {
 
 		Homework4 y = new Homework4();
 		int year = 0;
-		int month = 0;
-		int day = c;
 		year = y.leapYear(a);
 		int sum = 0;
 		sum = y.sumDay(year, b, c);
-		
+
 		if (b == 2 && c > 28 && year == 365) {
 			System.out.println("非閏年 2月不可以超過28天");
 		}
-		
-		else if ( (b == 4 || b == 6 || b == 9 || b == 12) && (year == 365 || year == 366) && c > 30){
-			
-			System.out.println("2 4 6 9 12月不可以超過30天");
-		}
-		else if(b == 2 && c > 29 && year == 366) {
+
+		else if ((b == 4 || b == 6 || b == 9 || b == 11) && (year == 365 || year == 366) && c > 30) {
+			System.out.println("2 4 6 9 11月不可以超過30天");
+		} else if (b == 2 && c > 29 && year == 366) {
 			System.out.println("閏年 2月不可以超過29天");
-		}
-		else {
+		} else if ((b == 1 || b == 3 || b == 5 || b == 7 || b == 8 || b == 10 || b == 12)
+				&& (year == 365 || year == 366) && c > 31) {
+			System.out.println("1 3 5 7 8 10 12月不可以超過30天");
+		} else {
 			System.out.printf("輸入的日期為該天該年的第 %d 天 \n", sum);
 		}
-		
+
+		System.out.println("===========================================");
+
 	}
 
 	public int leapYear(int a) {
@@ -173,11 +173,11 @@ public class Homework4 {
 			return 365;
 		}
 	}
-	
-	public int sumDay(int year, int b,int c) {
-		
+
+	public int sumDay(int year, int b, int c) {
+
 		int sum = c;
-		
+
 		for (int i = 1; i < b; i++) {
 			if (i == 2 && year == 366) {
 				sum += 29;
@@ -185,15 +185,13 @@ public class Homework4 {
 				sum += 28;
 			} else if (i == 4 || i == 6 || i == 9 || i == 11) {
 				sum += 30;
-			}
-			else {
+			} else {
 				sum += 31;
 			}
 		}
 		return sum;
 	}
-	
+
 //	===============================================================
-	
-	
+
 }
