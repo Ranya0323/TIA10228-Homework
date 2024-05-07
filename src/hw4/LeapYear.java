@@ -17,6 +17,7 @@ public class LeapYear {
 		int allday = input.nextInt();
 
 		now.yearMonthDay(allyear, allmonth, allday);
+		input.close();
 		
 	}
 	

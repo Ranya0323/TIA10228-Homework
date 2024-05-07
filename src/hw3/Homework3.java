@@ -23,6 +23,7 @@ public class Homework3 {
 		int x = input.nextInt();
 
 		tri.theHater(x);
+		input.close();
 	}
 
 	public void triangle(int a, int b, int c) {

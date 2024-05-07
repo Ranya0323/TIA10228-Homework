@@ -29,6 +29,7 @@ public class Homework4 {
 		hw.yearMonthDay(allyear, allmonth, allday);
 
 		show.scoreCompare();
+		input.close();
 
 	}
 
