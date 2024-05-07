@@ -17,16 +17,13 @@ public class Homework5 {
 		
 		hw.randAvg();
 		
-		int[][] intArray = {{1, 6, 3}, 
-							{9, 5, 2}};
-	    double[][] doubleArray = {{1.2, 3.5, 2.2}, 
-	    						  {7.4, 2.1, 8.2}};
-
-	    System.out.println("int陣列的最大值：" + w3.maxElement(intArray));
-	    System.out.println("double陣列的最大值：" + w3.maxElement(doubleArray));
-	    System.out.println("========================================");
+		int[][] intArray = {{1, 6, 3}, {9, 5, 2}};
+	    	double[][] doubleArray = {{1.2, 3.5, 2.2}, {7.4, 2.1, 8.2}};
+	    	System.out.println("int陣列的最大值：" + w3.maxElement(intArray));
+	    	System.out.println("double陣列的最大值：" + w3.maxElement(doubleArray));
+	    	System.out.println("========================================");
 	    
-	    hw.genAuthCode();	    
+		hw.genAuthCode();	    
 		
 	}
 	
