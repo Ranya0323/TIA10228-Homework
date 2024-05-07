@@ -12,6 +12,7 @@ public class Homework5 {
 		int x = sc.nextInt();
 		System.out.print("請輸入四邊形的長為多少 : ");
 		int y = sc.nextInt();
+		sc.close();
 		hw.starSquare(x,y);
 		
 		hw.randAvg();
