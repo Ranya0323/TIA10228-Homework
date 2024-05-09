@@ -53,7 +53,7 @@ public class Homework3 {
 	public void randomTo9() {
 		int number = (int) (Math.random() * 101);
 		Scanner input = new Scanner(System.in);
-
+		input.close();
 		while (true) {
 			System.out.println("猜一個 0 ~ 101 的數字吧 :");
 			int x = input.nextInt();

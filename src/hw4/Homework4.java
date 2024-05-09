@@ -98,7 +98,7 @@ public class Homework4 {
 
 		for (int j = 0; j < data.length; j++) {
 
-			String stringData = data[j]; // 剛剛好上一題 可以用charAt()比對字串 反正結果也不用輸出陣列 就把內容轉成字串了
+			String stringData = data[j]; // 剛剛好上一題 可以用charAt()比對字元 反正結果也不用輸出陣列 就把內容轉成字元了
 
 			for (int k = 0; k < stringData.length(); k++) {
 				char check = stringData.charAt(k);

@@ -50,7 +50,7 @@ public class Homework5 {
 			all += data[i];
 		}
 		System.out.println();
-		double avg = all / data.length;
+		double avg = (double)all / data.length;
 		System.out.println("這10個亂數的平均值為 : "+ avg);
 		System.out.println("========================================");
 		
@@ -63,14 +63,16 @@ public class Homework5 {
 		char[] randomCode = new char[8];
 		
 		Random random = new Random();
+		System.out.print("隨機8碼為 : ");
 		for (int i = 0; i < 8; i++) {
 			int index = random.nextInt(abcNUM.length());
 			randomCode[i] = abcNUM.charAt(index);
-		}
-		System.out.print("隨機8碼為 : ");
-		for(int i = 0; i < randomCode.length; i++) {
 			System.out.print(randomCode[i]);
 		}
+//		System.out.print("隨機8碼為 : ");
+//		for(int i = 0; i < randomCode.length; i++) {
+//			System.out.print(randomCode[i]);
+//		}
 		System.out.println();
 		System.out.println("========================================");
 		
