@@ -17,16 +17,17 @@ public class CalTest {
 
 				x = sc.nextInt();
 				y = sc.nextInt();
-				Calculator c1 = new Calculator(x,y);
-				int result = c1.getPow();
+				Calculator c1 = new Calculator();
+				int result = c1.powerXY(x,y);
 				System.out.printf("%d 的 %d平方為 : %d", x,y,result);
 				break;
 			} catch (InputMismatchException e) {
 				System.out.println("格式錯誤 請重新輸入");
-				e.printStackTrace();
+//				e.printStackTrace();
 				sc.nextLine();
 			}catch(CalException e) {
-				e.printStackTrace();
+				System.out.println(e.getMessage());
+//				e.printStackTrace();
 			}
 
 		}
