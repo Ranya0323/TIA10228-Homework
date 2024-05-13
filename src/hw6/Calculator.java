@@ -7,11 +7,7 @@ public class Calculator {
 	private int y;
 	
 	public void setX(int x) throws CalException{
-		Scanner sc = new Scanner(System.in);
-		if(!sc.hasNextInt()) {
-			throw new CalException("請輸入數字");
-		}
-		else if(x == 0 && y == 0) {
+		if(x == 0 && y == 0){
 			throw new CalException("0的0次方沒有意義");
 		}
 		else {
