@@ -1,5 +1,6 @@
 package hw7;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -36,13 +37,22 @@ public class AnimalTest {
 		FileInputStream fis = new FileInputStream(file);
         ObjectInputStream ois = new ObjectInputStream(fis);
         
-        for (int j = 0; j < animal.length; j++) {
-        	animal[j] = (Animal) ois.readObject();
-        }
+        try {
+			while (true) {
+				((Animal) ois.readObject()).speak();
+				System.out.println("--------------------");
+			}
+		} catch (EOFException e) {
+			System.out.println("資料讀取完畢！");
+		}
         
-        for (Animal pet : animal) {
-            pet.speak();
-        }
+//        for (int j = 0; j < animal.length; j++) {
+//        	animal[j] = (Animal) ois.readObject();
+//        }
+//        
+//        for (Animal pet : animal) {
+//            pet.speak();
+//        }
         
         ois.close();
         fis.close();
