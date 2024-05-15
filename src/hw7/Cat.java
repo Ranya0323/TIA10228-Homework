@@ -2,14 +2,14 @@ package hw7;
 
 import java.io.Serializable;
 
-public class Cat implements Serializable {
-	private String name;
+public class Cat extends Animal implements Serializable {
 	
 	public Cat(String name) {
-		this.name = name;
+		super(name);
 	}
-	
+
 	public void speak() {
+		super.speak();
 		System.out.println("This is Cat " + name + " speaking!");
 	}
 	
