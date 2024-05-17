@@ -9,7 +9,6 @@ public class Cat extends Animal implements Serializable {
 	}
 
 	public void speak() {
-		super.speak();
 		System.out.println("This is Cat " + name + " speaking!");
 	}
 	
